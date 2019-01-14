@@ -23,7 +23,8 @@ class CostDiff
     public function __construct($diff, $actual, $last = 1, $res = 0){
         $this->diff = $diff;
         $this->actual = $actual;
-        $this->last = $last;
+        
+        $this->last = (isset($last) && $last != null)?$last: 1;
         $this->res = $res;
         $this->amount = 0;
         $this->diff();
